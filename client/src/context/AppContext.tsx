@@ -1,5 +1,13 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { type ActivityEntry, type FoodEntry, initialState, type User } from "../types";
+// import { type ActivityEntry, type FoodEntry, initialState, type User } from "../types";
+import {
+  type ActivityEntry,
+  type FoodEntry,
+  initialState,
+  type User,
+  type Credentials
+} from "../types";
+
 import { useNavigate } from "react-router-dom";
 import api from "../configs/api";
 import toast from "react-hot-toast";
@@ -19,7 +27,7 @@ const [allActivityLogs, setAllActivityLogs] = useState<ActivityEntry[]>([]);
 
 
   // ✅ SIGNUP
-  const signup = async (credentials: Credential) => {
+  const signup = async (credentials: Credentials) => {
     try {
       const { data } = await api.post(
         "/api/auth/local/register",
@@ -43,7 +51,7 @@ const [allActivityLogs, setAllActivityLogs] = useState<ActivityEntry[]>([]);
   };
 
   // ✅ LOGIN
-  const login = async (credentials: Credential) => {
+  const login = async (credentials: Credentials) => {
     try {
       const { data } = await api.post("/api/auth/local", {
         identifier: credentials.email,

@@ -384,7 +384,8 @@ const handleImageChange = async (
           </span>
 
           <button
-            onClick={() => handleDelete(entry.documentId)}
+          onClick={() => entry.documentId && handleDelete(entry.documentId)}
+
             className="text-red-400 hover:text-red-500 transition"
           >
             <Trash2Icon className="w-4 h-4" />

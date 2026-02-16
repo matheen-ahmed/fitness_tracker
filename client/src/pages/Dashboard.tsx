@@ -5,11 +5,7 @@ import Card from "../components/ui/Card";
 import ProgressBar from "../components/ui/ProgressBar";
 import {
   Activity,
-  FlameIcon,
   HamburgerIcon,
-  Ruler,
-  ScaleIcon,
-  TrendingUpIcon,
   ZapIcon,
 } from "lucide-react";
 import CaloriesChart from "../components/CaloriesChart";
@@ -44,12 +40,12 @@ const Dashboard = () => {
     0
   );
 
-  const totalBurned = todayActivities.reduce(
+  const _totalBurned = todayActivities.reduce(
     (sum, item) => sum + (item.calories || 0),
     0
   );
 
-  const remainingCalories = DAILY_CALORIE_LIMIT - totalCalories;
+  const _remainingCalories = DAILY_CALORIE_LIMIT - totalCalories;
 
   const motivation = getMotivationalMessage(
     totalCalories,
