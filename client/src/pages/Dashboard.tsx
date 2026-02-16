@@ -40,12 +40,6 @@ const Dashboard = () => {
     0
   );
 
-  const _totalBurned = todayActivities.reduce(
-    (sum, item) => sum + (item.calories || 0),
-    0
-  );
-
-  const _remainingCalories = DAILY_CALORIE_LIMIT - totalCalories;
 
   const motivation = getMotivationalMessage(
     totalCalories,
